@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% block title %}Our Services - Unreal Automation{% endblock %}
+{% block content %}
+  <section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+      <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">What We Offer As Our Services</h1>
+        <p class="mb-8 leading-relaxed">
+            Unreal Automation offers a range of comprehensive services designed to empower your business with efficient automation and cutting-edge web applications. Our team of dedicated professionals is committed to delivering solutions that transform the way you work and maximize your productivity.
+        </p>
+        
+      </div>
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded w-600 h-700" src="{{ url_for('static', filename='image/main1.gif') }}">
+      </div>
+    </div>
+  </section>
+  <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img class="w-600 h-700 object-cover object-center rounded" src="{{ url_for('static', filename='image/gsheetAutomation.jpg') }}">
+          </div>
+          <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Google Sheet Automation</h1>
+            <p class="mb-8 leading-relaxed">
+              Harness the power of automation to streamline your Google Sheet workflows. Our expertise in Google scripting allows us to create tailored solutions that automate data entry, generate insightful reports, and perform complex calculations. Say goodbye to manual, time-consuming tasks and embrace the efficiency of automation.
+            </p>
+            <p>
+              <strong>Google Sheet Automation services include:</strong></p>
+              <ul>
+                <li><strong>Custom Script Development:</strong> We develop custom scripts and macros that cater to your unique requirements, automating repetitive processes and enhancing data accuracy.</li>
+                <li><strong>Report Generation:</strong> Generate comprehensive and visually appealing reports with a single click, saving you hours of manual report creation.</li>
+                <li><strong>Data Integration:</strong> Seamlessly integrate data from various sources into your Google Sheets, ensuring a centralized and up-to-date repository.</li>
+              </ul>
+          </div>
+        </div>
+    </section>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Web Application Development</h1>
+            <p class="mb-8 leading-relaxed">
+              Elevate your business with dynamic and user-friendly web applications that cater to your specific needs. Our experienced team of developers can turn your ideas into reality, creating web applications that enhance efficiency and provide a seamless user experience.
+            </p>
+            <p><strong>Our Web Application Development services include:</strong> </p>
+            <ul>
+              <li><strong>Custom Application Development:</strong> From simple tools to complex enterprise solutions, we create customized web applications that align with your business goals.</li>
+              <li><strong>User Interface (UI) and User Experience (UX) Design:</strong> We prioritize user-centric design to ensure that your web application is intuitive, visually appealing, and easy to navigate.</li>
+              <li><strong>Database Integration:</strong> Implement robust database solutions to manage your data effectively and provide real-time insights.</li>
+            </ul>
+          </div>
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img src="{{ url_for('static', filename='image/services1.png') }}" class="object-cover object-center rounded w-600 h-700">
+          </div>
+        </div>
+    </section>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img src="https://source.unsplash.com/collection/1142370/720x600" class="object-cover object-center rounded w-600 h-700">
+          </div>
+          <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Quality Assurance and Support</h1>
+            <p>          
+              Our commitment to excellence doesn't end with project delivery. We place a strong emphasis on quality assurance and ongoing support to ensure that your solutions continue to perform optimally.
+            </p><br/>
+            <p><strong>Our Quality Assurance and Support services include:</strong></p>
+            <ul>
+              <li><strong>Rigorous Testing:</strong> We subject our solutions to thorough testing processes to identify and address any potential issues, ensuring reliability and functionality.</li>
+              <li><strong>Maintenance Services:</strong> As your business evolves, we provide ongoing maintenance services to keep your solutions up to date and compatible with changing requirements.</li>
+              <li><strong>24/7 Support:</strong> Our dedicated support team is available around the clock to address any queries, concerns, or issues you may have.</li>
+            </ul>
+          </div>
+        </div>
+    </section>
+    <section class="text-gray-600 body-font">
+      <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Why Choose Unreal Automation?</h1>
+          <p class="mb-8 leading-relaxed">
+            Choosing Unreal Automation means partnering with a team of experts dedicated to your success. With a track record of excellence and a passion for automation, we are committed to delivering results that exceed your expectations.
+          </p>
+          <p><strong>When you choose Unreal Automation, you can expect:</strong> </p>
+          <ul>
+            <li><strong>Expertise:</strong> Our professionals possess extensive experience in Google scripting, web application development, and website development.</li>
+            <li><strong>Tailored Solutions:</strong> We understand that every business is unique. Our solutions are customized to fit your specific needs perfectly.</li>
+            <li><strong>Quality Assurance:</strong> We prioritize delivering high-quality, reliable, and error-free solutions through rigorous testing and quality assurance processes.</li>
+            <li><strong>Timely Delivery:</strong> We respect your time and strive to deliver projects on schedule, ensuring a seamless experience.</li>
+            <li><strong>Ongoing Support:</strong> Our commitment extends beyond project completion. We offer ongoing support and maintenance to adapt to your evolving needs.</li>
+          </ul>
+          <p><strong>Ready to Embrace Efficiency?</strong></p>
+          <p>Unleash the power of automation and innovative web applications for your business. <a href="/contact" style="color: blue;">Contact us today</a> to start the journey toward greater efficiency, productivity, and success with Unreal Automation. Let's transform the way you work together!
+          </p>
+        </div>
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+          <img src="{{ url_for('static', filename='image/services1.png') }}" class="object-cover object-center rounded w-600 h-700">
+        </div>
+      </div>
+  </section>
+    {% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+<!-- <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script> -->
+<!-- Google fonts-->
+<!-- <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" /> -->
+<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" /> -->
+<!-- Core theme CSS (includes Bootstrap)-->
+<!-- <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet"/> -->
+{% block title %}Blogs - Unreal Automation{% endblock %}
+{% block content %}
+<br/><br/>
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+          <!-- Post preview-->
+          <ul class="list-group">
+            {% for post in post %}
+                <li class="list-group-item">
+                    <section class="text-gray-600 body-font">
+                        <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+                            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                                <a href="{{ url_for('blog_post', post_slug=post.slug) }}" target="_blank">
+                                    <h3 class="title-font sm:text-2xl text-2xl mb-4 font-medium text-gray-900" style="color: rgb(17, 127, 179);">
+                                        {{ post.title }} <i class="fa-solid fa-arrow-up-right-from-square" style="color: rgb(17, 127, 179);"></i>
+                                    </h3>
+                                </a>
+                                <p>{{ post.content|striptags|truncate(250, True)|safe }}</p><br/>
+                                <p class="text-muted"><b>Written By:</b> {{post.posted_by}} <b>on</b> {{ post.date.strftime('%B %d, %Y') }}</p>
+                            </div>
+                            <!-- <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                                <img class="object-cover object-center rounded w-60 h-20" alt="Streamline Your Workflows" src="{{ url_for('static', filename='image/workflow.gif') }}">
+                            </div> -->
+                        </div>
+                    </section>
+              </li>
+              <hr class="my-4" />
+            {% endfor %}
+          </ul>
+          <!-- Divider-->
+          <br />
+          <div class="d-flex justify-content-between mt-4">
+            <ul class="pagination">
+                <li class="page-item {% if post.has_prev %}enabled{% else %}disabled{% endif %}">
+                    <a class="page-link" href="{{ url_for('blogs', page=1) }}">First</a>
+                </li>
+                {% for num in post.iter_pages() %}
+                    {% if num %}
+                        <li class="page-item {% if post.page == num %}active{% endif %}">
+                            <a class="page-link" href="{{ url_for('blogs', page=num) }}">{{ num }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                    {% endif %}
+                {% endfor %}
+                <li class="page-item {% if post.has_next %}enabled{% else %}disabled{% endif %}">
+                    <a class="page-link" href="{{ url_for('blogs', page=post.pages) }}">Last</a>
+                </li>
+            </ul>
+        </div>
+        
+          <!-- Pager-->
+      </div>
+  </div>
+</div>
+{% endblock %}

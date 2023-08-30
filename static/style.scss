@@ -1,0 +1,70 @@
+
+.charts_orb {
+	display:flex;
+	align-items:flex-start;
+	justify-content:center;
+	flex-wrap:wrap;
+	font-family:arial;
+	color:rgb(10, 0, 0);
+	
+	.orb {
+		padding:20px;
+		
+		.orb_graphic {
+			position:relative;
+
+			.orb_value {
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+				font-size:2.5em;
+				font-weight:bold;
+			}
+		}
+
+		.orb_label {
+			text-transform:uppercase;
+			text-align:center;
+			margin-top:1em;
+		}
+	}
+	
+	svg {
+		width:110px;
+		height:110px;
+		
+		circle {
+			transform: rotate(-90deg);
+			transform-origin: 50% 50%;
+			stroke-dasharray: 314.16, 314.16;
+			stroke-width: 11;
+			fill: transparent;
+			
+			/* r: 50;
+			cx: 55;
+			cy: 55; */
+
+			&.fill {
+				stroke: #f80c0c;
+			}
+
+			&.progress {
+				stroke: #049204;
+				transition: stroke-dashoffset 0.35s;
+				stroke-dashoffset: 100;
+				animation: progress 1.5s forwards;
+				animation-timing-function: linear;
+
+				@keyframes progress {
+					0% { stroke-dashoffset: 314.16; }
+					100%   { stroke-dashoffset: 0; }
+				}
+			}
+		}	
+	}
+}

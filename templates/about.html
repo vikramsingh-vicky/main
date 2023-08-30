@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block title %}About Us - Unreal Automation{% endblock %}
+{% block content %}
+  <section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+      <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to Unreal Automation!</h1>
+        <p class="mb-8 leading-relaxed">
+          <br/>
+          At Unreal Automation, we specialize in providing top-notch solutions for all your Google Sheet automation needs. With a team of highly skilled professionals, we are dedicated to streamlining your workflows and maximizing your productivity through automation.
+        </p>
+        <p>
+          Our expertise lies in Google scripting, allowing us to create custom scripts and macros tailored to your specific requirements. Whether you need to automate data entry, generate reports, or perform complex calculations, we have the knowledge and experience to deliver efficient and effective solutions.
+        </p>
+        
+      </div>
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded w-600 h-700" src="{{ url_for('static', filename='image/Logo2withoutbg.png') }}">
+      </div>
+    </div>
+  </section>
+  <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img class="w-600 h-700 object-cover object-center rounded" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnN5b3h3NGF0OXViaW1nZnJudWN6M2JobnpmYm1wMTE2bXowbXlkcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/W2hyN6GryA5SVmKAXf/giphy.gif">
+          </div>
+          <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <!-- <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to Unreal Automation!</h1> -->
+            <p class="mb-8 leading-relaxed">
+              In addition to our Google Sheet automation services, we also offer web application development. Our team of experienced developers can create robust and user-friendly web applications to meet your unique business needs. From simple data management tools to comprehensive enterprise solutions, we can transform your ideas into reality.
+            </p>
+            <p>
+              At Unreal Automation, we believe in the power of technology to simplify processes and enhance efficiency. We stay up-to-date with the latest industry trends and tools to ensure that our clients receive the most innovative solutions available. Our goal is to help you save time, reduce errors, and increase overall productivity.
+            </p>
+          </div>
+        </div>
+    </section>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">When you choose Unreal Automation, you can expect:</h1>
+            <p class="mb-8 leading-relaxed">
+              <ol>
+                <li><b>Expertise:</b> Our team of professionals has extensive experience in Google scripting, web application development, and website development.</li>
+                <li><b>Custom Solutions:</b> We understand that every business is unique. That's why we take a tailored approach to meet your specific requirements and deliver custom solutions that fit your needs perfectly.</li>
+                <li><b>Quality Assurance:</b> We are committed to delivering high-quality solutions that exceed your expectations. Our rigorous testing and quality assurance processes ensure that our deliverables are reliable, robust, and error-free.</li>
+                <li><b>Timely Delivery:</b> We value your time and understand the importance of meeting deadlines. We strive to deliver our projects on time, ensuring a smooth and seamless experience for our clients.</li>
+                <li><b>Ongoing Support:</b> Our commitment to your success extends beyond project completion. We provide ongoing support and maintenance services to ensure that your solutions continue to operate flawlessly and adapt to your evolving needs.</li>
+              </ol>
+            </p>
+          </div>
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" class="object-cover object-center rounded w-600 h-700">
+          </div>
+        </div>
+    </section>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img src="https://source.unsplash.com/collection/1142370/720x600" class="object-cover object-center rounded w-600 h-700">
+          </div>
+          <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Get Started Today</h1>
+            <p>          
+              We are passionate about automation and technology, and we are excited to partner with you on your journey towards greater efficiency and productivity. Contact us today to discuss your automation needs or to learn more about how we can assist you. Let's make automation work for you!
+            </p>
+            <br />
+            <div class="flex justify-center">
+              <a class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg" href="/about">Get In Touch...</a>
+            </div>
+          </div>
+        </div>
+    </section>
+    {% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="text-gray-600 body-font">
+  <div class="editor-container">
+    <form action="/create_post" method="post">
+      <input type="text" id="title" name="title" placeholder="Enter title">
+      <textarea id="myTextarea" name="content" style="height: 65vh;"></textarea>
+      <br />
+      <button class="btn waves-effect waves-light items-center" style="color: black; background-color:darkorange;" type="submit" name="action">Create Post
+        <i class="material-icons right">dvr</i>
+      </button>
+    </form>
+  </div>
+    
+</section>
+{% endblock %}

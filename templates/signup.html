@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mx-auto px-5 py-2 flex-col items-center">
+  <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Register With Us</h1>
+  <div class="row">
+    <div class="col s2 m3"></div>
+    <form class="col s8 m6 items-center" action="/signup" method="post">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="Name" name="name" type="text" class="validate">
+          <label for="Name">Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="UserName" name="username" type="text" class="validate">
+          <label for="UserName">User Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="Email" type="email" name="email" class="validate">
+          <label for="Email">Email</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="Phone" type="tel" name="phone" class="validate">
+          <label for="Phone">Phone</label>
+        </div>
+        <div class="input-field col s12">
+          <a href="#" onclick="toggle('pview','Password')"><i id="pview" class="material-icons prefix" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%);">visibility_off</i></a>
+          <input id="Password" type="password" name="password" class="validate">
+          <label for="Password">Password</label>
+        </div>
+        <div class="input-field col s12">
+          <a href="#" onclick="toggle('pview1','rePassword')"><i id="pview1" class="material-icons prefix" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%);" >visibility_off</i></a>
+          <input id="rePassword" type="password" name="repassword" class="validate">
+          <label for="rePassword">Confirm Password</label>
+        </div>
+        <div class="input-field col s12">
+          <button type="submit" class="waves-effect waves-light btn" style="color: black; background-color:darkorange;" type="submit" name="action">Sign Up
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

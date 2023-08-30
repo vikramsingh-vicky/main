@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Unreal Automation specializes in Google Sheets automation and business process optimization. Streamline your workflows, unleash the power of automation, and gain advanced analytics and insights. Contact us today for a consultation.">
+      <link rel="icon" href="{{ url_for('static', filename='image/icon-without-bg.png') }}" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script src="https://cdn.tiny.cloud/1/nw0iuia11daqrudqvbthtxvzdbqvcpxos3l7t59lzglfpqh8/tinymce/6/tinymce.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.min.css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+      {% block contactCSS %}
+      {% endblock %}
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.scss') }}">
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
+      <title>{% block title %}{% endblock %} | Streamline Your Workflows, Unleash Automation, and Gain Insights</title>
+  </head>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  {% set furl= url_for('static', filename='image/'+'workflow.gif') %}
+  <body>
+      <header class="text-black-600 body-fontx text-black-600">
+          <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <nav class="md:mr-auto md:py-1 md:pl-4 flex flex-wrap items-center text-base text-gray-900 bg-orange-50">
+              <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 px-5" href="/">
+                <img class="w-10 h-10" src="{{ url_for('static', filename='image/icon-without-bg.png') }}" alt="Unreal Automation">
+                <span class="ml-3 text-xl">The Unreals</span>
+              </a>
+              <div class="vl px-5"></div>
+              <a class="mr-5 nav-link" style="color: rgb(99, 99, 99);" id="abt" href="/about">About Us</a>
+              <a class="mr-5 nav-link" style="color: rgb(99, 99, 99);" id="srvs" href="/services">Services</a>
+              <a class="mr-5 nav-link" style="color: rgb(99, 99, 99);" id="cnt" href="/contact">Contact Us</a>
+              <a class="mr-5 nav-link" style="color: rgb(99, 99, 99);" id="blg" href="/blogs">Blogs</a>
+              <ul class="navbar-nav ml-auto">
+                {% if current_user.is_authenticated %}
+                  <li style="margin-top:10%;">
+                    <a class="dropdown-trigger" href="#" data-target="userDropdown" style="color: rgb(2, 71, 11);font-weight: 800;">{{current_user.username}}
+                      <i class="material-icons right" style="margin:-12% 0% 0% -5%; padding-top:-20%;">arrow_drop_down</i>
+                    </a>
+                  </li>
+                  <ul id="userDropdown" class="dropdown-content">
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% if current_user.mem_type == 'Admin' or current_user.mem_type == 'Blogger' %}
+                      <li><a href="{{ url_for('create_post') }}">Create New Blog</a></li>
+                    {% endif %}
+                  </ul>
+                {% else %}
+                  <li>
+                    <a class="nav-link" style="color: rgb(99, 99, 99);" href="{{ url_for('login') }}">Login</a>
+                  </li>
+                  <li>
+                    <a class="nav-link" style="color: rgb(99, 99, 99);" href="{{ url_for('signup') }}">Sign Up</a>
+                  </li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+          
+      </header>
+      
+      {% block content %}
+      {% endblock %}
+
+
+      <div class="contact-widget">
+        <div class="whatsapp-widget">
+          <a href="https://wa.me/7011285005?text=Hello%20there!%20I%20found%20you%20on%20the%20website.%20I%20have%20a%20question." target="_blank">
+            <img src="{{ url_for('static', filename='image/new_wa.gif')}}" alt="WhatsApp">
+          </a>
+        </div>
+        <a href="tel:917840005187" class="call-now-link">
+          <img src="{{ url_for('static', filename='image/call.gif')}}" alt="Call Now">
+        </a>
+      </div>
+      <footer class="bottom text-black-600 body-font text-black-600">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+          <nav class="md:mr-auto md:py-1 md:pl-4 flex flex-wrap items-center text-base text-gray-900 bg-orange-50">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="/">
+              <img class="w-10 h-10" src="{{ url_for('static', filename='image/icon-without-bg.png') }}" alt="Unreal Automation">
+              <span class="ml-3 text-xl">The Unreals</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© {{current_year}} The Unreals</p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+              <a class="text-gray-500" href="https://www.youtube.com/@TheUnreals" target="_blank">
+                <img src="{{ url_for('static', filename='image/YouTube.png') }}" class=" w-15 h-8" alt="Unreal Automation YouTube Channel"/>
+              </a>
+              <a class="ml-3 text-gray-500" href="https://www.facebook.com/profile.php?id=100078450640858" target="_blank">
+                <img src="{{ url_for('static', filename='image/Facebook.png') }}" class=" w-15 h-8" alt="Unreal Automation Facebook Page"/>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <img src="{{ url_for('static', filename='image/Twitter.png') }}" class=" w-15 h-8" alt="Unreal Automation Twitter Handle"/>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <img src="{{ url_for('static', filename='image/Instagram.png') }}" class=" w-15 h-8" alt="Unreal Automation Instagram"/>
+              </a>
+              <a class="ml-3 text-gray-500" href="">
+                <img src="{{ url_for('static', filename='image/LinkedIn.png') }}" class=" w-15 h-8" alt="Unreal Automation LinkedIn"/>
+              </a>
+            </span>
+            </nav>
+          </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>

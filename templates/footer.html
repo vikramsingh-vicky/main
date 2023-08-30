@@ -1,0 +1,26 @@
+<footer class="text-gray-600 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="/">
+        <img class="w-10 h-10" src="{{ url_for('static', filename='image/icon-without-bg.png') }}" alt="Logo">
+        <span class="ml-3 text-xl">The Unreals</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© {{current_year}} The Unreals</p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500" href="https://www.youtube.com/@TheUnreals" target="_blank">
+          <img src="{{ url_for('static', filename='image/YouTube.png') }}" class=" w-15 h-8"/>
+        </a>
+        <a class="ml-3 text-gray-500" href="https://www.facebook.com/profile.php?id=100078450640858" target="_blank">
+          <img src="{{ url_for('static', filename='image/Facebook.png') }}" class=" w-15 h-8"/>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <img src="{{ url_for('static', filename='image/Twitter.png') }}" class=" w-15 h-8"/>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <img src="{{ url_for('static', filename='image/Instagram.png') }}" class=" w-15 h-8"/>
+        </a>
+        <a class="ml-3 text-gray-500" href="">
+          <img src="{{ url_for('static', filename='image/LinkedIn.png') }}" class=" w-15 h-8"/>
+        </a>
+      </span>
+    </div>
+</footer>

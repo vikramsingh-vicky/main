@@ -1,0 +1,14 @@
+{
+    "params":
+    {
+        "local_server" : "True",
+        "local_uri" : "mysql://root:@localhost/the_unreals",
+        "prod_uri" : "mysql://root:@localhost/the_unreals",
+        "gmail-user" : "admin@unrealautomation.com",
+        "gmail-password" : "Rrj@#1989",
+        "blogs_per_page" : 5,
+        "projects_completed" : 25,
+        "happy_clients" : 8,
+        "application_users" : 1345
+    }
+}
